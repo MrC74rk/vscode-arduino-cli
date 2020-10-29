@@ -8,8 +8,8 @@ jobs:
     container:
       image: ubuntu:trusty
     steps:
-    - uses: actions/checkout@v2
-    - name: Install vscode
+      - name: Install vscode
+        uses: actions/checkout@v2
   run: |
     apt-get update
     apt-get clean
