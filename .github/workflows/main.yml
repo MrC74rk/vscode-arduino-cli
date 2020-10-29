@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     name: CI/CD Automation
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
       - name: Automation step 1
         uses: ./.github/
