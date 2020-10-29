@@ -1,4 +1,4 @@
-on: [push, pull_request]
+on: [push]
 
 jobs:
   test:
@@ -6,6 +6,5 @@ jobs:
     name: CI/CD Automation
     steps:
       - uses: actions/checkout@v2
-         with: branch: develop
       - name: Automation step 1
         uses: ./.github/
