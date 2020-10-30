@@ -7,4 +7,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Automation step 1
-        uses: ./.github/Dockerfile
+        uses: /.github/Dockerfile
