@@ -26,8 +26,8 @@ then
         #apt-get install -y dotnet
         dotnet --list-sdks        
         
-        #apt-get install -y node
-        #apt get install -y git
+        apt-get install -y node
+        apt get install -y git
         
   echo "** **"
 fi
