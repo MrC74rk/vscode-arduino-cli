@@ -37,6 +37,7 @@ then
   gulp package
 
   echo "** Installing VSCode Test Package **"
+  code --user-data-dir="~/.vscode-root" #So we can run as root
   code --install-extension /github/workspace/vscode-arduino-cli-0.0.2.vsix
 
   echo "** Executing Test **"
