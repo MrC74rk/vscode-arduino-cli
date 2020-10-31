@@ -21,6 +21,11 @@ ARG NPM_GLOBAL=/usr/local/share/npm-global
 ENV PATH=${PATH}:${NPM_GLOBAL}/bin
 ENV NVM_DIR=/usr/local/share/nvm
 
+# Options for common package install script
+ARG INSTALL_ZSH="true"
+ARG UPGRADE_PACKAGES="true"
+ARG COMMON_SCRIPT_SOURCE="https://raw.githubusercontent.com/microsoft/vscode-dev-containers/v0.122.1/script-library/common-debian.sh"
+ARG COMMON_SCRIPT_SHA="da956c699ebef75d3d37d50569b5fbd75d6363e90b3f5d228807cff1f7fa211c"
 
 # Configure apt and install packages
 RUN apt-get update \
@@ -50,6 +55,17 @@ RUN apt-get update \
     && npm config -g set prefix ${NPM_GLOBAL} \
     && sudo -u ${USERNAME} npm config -g set prefix ${NPM_GLOBAL} \
     #
+    # Install NVM to allow installing alternate versions of Node.js as needed
+    && mkdir -p ${NVM_DIR} \
+    && export NODE_VERSION= \
+    && curl -so- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash 2>&1 \
+    && /bin/bash -c "source $NVM_DIR/nvm.sh \
+        && nvm alias default system" 2>&1 \
+    && echo '[ -s "$NVM_DIR/nvm.sh" ] && \\. "$NVM_DIR/nvm.sh"  && [ -s "$NVM_DIR/bash_completion" ] && \\. "$NVM_DIR/bash_completion"' \ 
+    | tee -a /home/${USERNAME}/.bashrc /home/${USERNAME}/.zshrc >> /root/.zshrc \
+    && chown ${USER_UID}:${USER_GID} /home/${USERNAME}/.bashrc /home/${USERNAME}/.zshrc \
+    && chown -R ${USER_UID}:root ${NVM_DIR} \
+    #
     # Handle scenarios where GID/UID is changed
     && echo "if [ \"\$(stat -c '%U' ${NPM_GLOBAL})\" != \"${USERNAME}\" ]; then sudo chown -R ${USER_UID}:root ${NPM_GLOBAL} ${NVM_DIR}; fi" \
     | tee -a /root/.bashrc /root/.zshrc /home/${USERNAME}/.bashrc >> /home/${USERNAME}/.zshrc \
@@ -65,10 +81,3 @@ RUN apt-get update \
     && apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
-
-
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x entrypoint.sh
-# RUN git add entrypoint.sh
-# RUN git commit
-ENTRYPOINT ["/entrypoint.sh"]
