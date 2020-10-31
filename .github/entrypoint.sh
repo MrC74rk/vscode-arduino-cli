@@ -15,5 +15,9 @@ then
         apt-get install -y apt-transport-https
         apt-get update
         apt-get install -y code
+        apt-get install -y dotnet31dsk
+        apt-get install -y node
+        apt get install -y git
+        
   echo "** **"
 fi
