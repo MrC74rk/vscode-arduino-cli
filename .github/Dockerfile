@@ -13,9 +13,8 @@ FROM node:14
 # will be updated to match your local UID/GID (when using the dockerFile property).
 # See https://aka.ms/vscode-remote/containers/non-root-user for details.
 #
-USER: node:1000
 #
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x entrypoint.sh 
 #
-#ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
