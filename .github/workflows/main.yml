@@ -1,11 +1,11 @@
 on: [push]
 
 jobs:
-  -stage: Build Docker
-    name: Building the Docker
+  test:
     runs-on: ubuntu-18.04
-    - uses: actions/checkout@v2
-    - name: Create Docker
-      uses: ./.github/
-        id: 'Dockerfile'
-  
+    name: CI/CD Automation
+    steps:
+     - uses: actions/checkout@v2
+     - name: Create Docker
+       uses: ./.github/
+       id: 'Dockerfile'
