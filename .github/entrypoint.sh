@@ -37,7 +37,7 @@ then
   gulp package
 
   echo "** Installing VSCode Test Package **"
-  #code --install-extension (<extension-vsix-path>)
+  code --install-extension /github/workspace/vscode-arduino-cli-0.0.2.vsix
 
   echo "** Executing Test **"
   mocha ./src/test/runTest.ts
