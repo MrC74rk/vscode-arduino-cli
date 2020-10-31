@@ -12,6 +12,6 @@ USER node
 #
 #
 COPY entrypoint.sh /entrypoint.sh
-RUN sudo chmod +x entrypoint.sh 
+CMD sudo chmod +x entrypoint.sh 
 #
 ENTRYPOINT ["/entrypoint.sh"]
