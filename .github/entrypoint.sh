@@ -15,9 +15,10 @@ then
         apt-get install -y apt-transport-https
         apt-get update
         apt-get install -y code
-        apt-get install -y dotnet-sdk-3.1
-        apt-get install -y node
-        apt get install -y git
+        apt-get search dotnet
+        #apt-get install -y dotnet-sdk-3.1
+        #apt-get install -y node
+        #apt get install -y git
         
   echo "** **"
 fi
