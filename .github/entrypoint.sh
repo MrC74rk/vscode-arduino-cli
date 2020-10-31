@@ -15,10 +15,17 @@ then
         apt-get install -y apt-transport-https
         apt-get update
         apt-get install -y code
+        
+        #Heap of crap to install DotNet-SDK
+        wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+        sudo dpkg -i packages-microsoft-prod.deb
+        sudo apt-get update; \
+          sudo apt-get install -y apt-transport-https && \
+          sudo apt-get update && \
+          sudo apt-get install -y dotnet-sdk-3.1        
         #apt-get install -y dotnet
-        #dotnet --list-sdks
-        apt-get install -t snap
-        snap install dotnet-sdk --classic --channel=3.1
+        dotnet --list-sdks        
+        
         #apt-get install -y node
         #apt get install -y git
         
