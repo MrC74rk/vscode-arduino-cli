@@ -29,6 +29,7 @@ then
         apt-get install -y libx11-xcb1
         apt-get install -y libxcb-dri3-0
         apt-get install -y libdrm2
+        apt-get install -y libgbm1
 
         apt-get install -y nodejs #installs node.js
         
