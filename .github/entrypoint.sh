@@ -33,6 +33,7 @@ then
   echo "** Building VISX **"
   npm install --global vsce
   npm install --global gulp
+  npm i
   gulp package
 
   echo "** Installing VSCode Test Package **"
