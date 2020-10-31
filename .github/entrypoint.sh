@@ -8,6 +8,7 @@ then
   echo "** Running github action script **"
         apt-get update
         apt-get clean
+        apt-get install -y git
         apt-get install -y wget
         wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
         install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
@@ -19,15 +20,15 @@ then
         #Heap of crap to install DotNet-SDK
         wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
         sudo dpkg -i packages-microsoft-prod.deb
-        sudo apt-get update; \
-          sudo apt-get install -y apt-transport-https && \
-          sudo apt-get update && \
-          sudo apt-get install -y dotnet-sdk-3.1        
+        #sudo apt-get update; \
+        #  sudo apt-get install -y apt-transport-https && \
+        #  sudo apt-get update && \
+        sudo apt-get install -y dotnet-sdk-3.1        
         #apt-get install -y dotnet
         dotnet --list-sdks        
         
         apt-get install -y nodejs
-        #apt get install -y git
+        
         
   echo "** **"
 fi
