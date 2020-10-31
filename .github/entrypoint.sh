@@ -26,7 +26,7 @@ then
         # dotnet --list-sdks    (line to insure SDK was installed Troubleshooting)    
         
         #install libX11-DEV (Required by vs code???)
-        apt-get install -y libx11-xbc1
+        apt-get install -y x11-common
 
         apt-get install -y nodejs #installs node.js
         
