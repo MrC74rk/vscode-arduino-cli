@@ -38,14 +38,14 @@ then
   echo "** Docker Environment Ready **"  #mark end of docker setup
 
   echo "** Building VISX **"
+  npm-update -g
   npm install --global vsce
   npm install --global gulp
-  npm i
   gulp package
 
   echo "** Installing VSCode Test Package **"
-  code --user-data-dir=~/.vscode-root/ #So we can run as root
-  code --install-extension /github/workspace/vscode-arduino-cli-0.0.2.vsix
+  #code — user-data-dir=”~/.vscode-root” ---So we can run as root
+  code — user-data-dir=”~/.vscode-root” --install-extension /github/workspace/vscode-arduino-cli-0.0.2.vsix
 
   echo "** Executing Test **"
   mocha ./src/test/runTest.ts
