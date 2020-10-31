@@ -1,7 +1,8 @@
 on: [push]
 
 jobs:
-    name: Build Docker
+  -stage: Build Docker
+    displayName: Building the Docker
     runs-on: ubuntu-18.04
     - uses: actions/checkout@v2
     - name: Create Docker
