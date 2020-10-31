@@ -13,18 +13,9 @@ FROM node:14
 # will be updated to match your local UID/GID (when using the dockerFile property).
 # See https://aka.ms/vscode-remote/containers/non-root-user for details.
 #
-ARG USERNAME=node
-ARG USER_UID=1000
-ARG USER_GID=$USER_UID
-#
-ARG NPM_GLOBAL=/usr/local/share/npm-global
-ENV PATH=${PATH}:${NPM_GLOBAL}/bin
-ENV NVM_DIR=/usr/local/share/nvm
+USER: node:1000
 #
 COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x entrypoint.sh \
-    && ./entrypoint.sh \
-    && code --user-data-dir="~/.vscode-root" #---So we can run as root \
-    && code --install-extension /github/workspace/vscode-arduino-cli-0.0.2.vsix
+RUN chmod +x entrypoint.sh 
 #
 #ENTRYPOINT ["/entrypoint.sh"]
