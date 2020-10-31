@@ -23,8 +23,8 @@ ENV NVM_DIR=/usr/local/share/nvm
 #
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x entrypoint.sh \
-    && sudo ./entrypoint.sh \
-    && code --user-data-dir="~/.vscode-root" #---So we can run as root \
-    && code --install-extension /github/workspace/vscode-arduino-cli-0.0.2.vsix
+    && ./entrypoint.sh \
+    && --user-data-dir="~/.vscode-root" #---So we can run as root \
+    && --install-extension /github/workspace/vscode-arduino-cli-0.0.2.vsix
 #
 #ENTRYPOINT ["/entrypoint.sh"]
