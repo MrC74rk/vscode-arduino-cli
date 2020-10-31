@@ -30,6 +30,7 @@ then
         apt-get install -y libxcb-dri3-0
         apt-get install -y libdrm2
         apt-get install -y libgbm1
+        apt-get install -y libasound2
 
         apt-get install -y nodejs #installs node.js
         
