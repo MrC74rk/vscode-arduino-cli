@@ -34,10 +34,14 @@ then
   npm install --global vsce
   npm install --global gulp
   gulp package
-  
+
   echo "** Installing VSCode Test Package **"
   #code --install-extension (<extension-vsix-path>)
 
   echo "** Executing Test **"
   mocha ./src/test/runTest.ts
+
+  echo "** END TEST **"
+
+  echo "** Starting Cleanup **"
 fi
