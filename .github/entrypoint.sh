@@ -27,7 +27,7 @@ then
         
         #installing more dependancies (Required by vs code???)
         apt-get install -y libx11-xcb1
-        apt-get install -y libxcb1
+        apt-get install -y libxcb-dri3-0
 
         apt-get install -y nodejs #installs node.js
         
