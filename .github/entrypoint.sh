@@ -38,7 +38,7 @@ then
   echo "** Docker Environment Ready **"  #mark end of docker setup
 
   echo "** Building VISX **"
-  npm-update -g
+  npm update
   npm install --global vsce
   npm install --global gulp
   gulp package
