@@ -3,12 +3,10 @@ on: [push]
 stages:
   stage:
     name: Build Docker
-    displayName: Creating Docker Environnment
-      runs-on: ubuntu-18.04
-      name: CI/CD Automation
+    runs-on: ubuntu-18.04
       step:
       - uses: actions/checkout@v2
       - name: Create Docker
         uses: ./.github/
-        id: 'Dockerfile'
+          id: 'Dockerfile'
   
