@@ -1,7 +1,6 @@
 on: [push]
 
-stages:
-  stage:
+jobs:
     name: Build Docker
     runs-on: ubuntu-18.04
     - uses: actions/checkout@v2
