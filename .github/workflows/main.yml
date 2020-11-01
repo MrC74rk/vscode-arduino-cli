@@ -18,8 +18,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - run: npm install
-    - run: ls | grep package-lock
     - run: npm ci 
     #  if: runner.os == 'Linux'
-    - run: ./node_modules/mocha/bin/_mocha
+    - run: npx mocha test
+    #- run: ./node_modules/mocha/bin/_mocha
     #  if: runner.os != 'Linux'
