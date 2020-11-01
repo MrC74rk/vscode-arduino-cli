@@ -6,6 +6,7 @@
 # To fully customize the contents of this image, use the following Dockerfile instead:
 # https://github.com/microsoft/vscode-dev-containers/tree/v0.122.1/containers/javascript-node-14/.devcontainer/Dockerfile
 FROM node:14
+RUN apt-get update
 RUN apt-get install -y sudo
 RUN echo "user ALL(root) NOPASSWD:ALL" > /ect/sudousers.d/user && \
     chmod 0440 /etc/sudousers.d/user
