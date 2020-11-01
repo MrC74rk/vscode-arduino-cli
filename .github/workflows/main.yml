@@ -18,9 +18,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - run: npm install
-    - run: npm i @types/node -D
+    - run: npm install chai mocha ts-node @types/chai @types/mocha --save-dev
     #- run: npm ci 
     #  if: runner.os == 'Linux'
-    - run: npx mocha /home/runner/work/vscode-arduino-cli/vscode-arduino-cli/src/test/runTest.ts
+    - run: npm test
+    #- run: npx mocha /home/runner/work/vscode-arduino-cli/vscode-arduino-cli/src/test/runTest.ts
     #- run: ./node_modules/mocha/bin/_mocha
     #  if: runner.os != 'Linux'
