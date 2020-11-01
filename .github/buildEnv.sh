@@ -41,7 +41,9 @@ echo "** Building Environment **"
   npm install --global vsce
   npm install --global gulp
   gulp package
-
+  
+  which vscode
+  
   chmod 0755 entrypoint.sh  #make entrypoint script executable by non-root
   echo "** Changing Users **"
 fi
