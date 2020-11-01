@@ -8,9 +8,9 @@ on:
 
 jobs:
   build:
-    strategy:
-      matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
+    #strategy:
+    #  matrix:
+    #    os: [macos-latest, ubuntu-latest, windows-latest]
     runs-on: ubuntu-latest #${{ matrix.os }} To reduce test time
     steps:
     - name: Checkout
