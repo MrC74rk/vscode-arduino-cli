@@ -19,11 +19,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 10.x
-    - run: npm i
-    - run: npm install --global vsce
-    - run: npm install --global mocha    
-    - run: npm install --global gulp
-    - run: mocha ./src/test/runTest.ts
+    - run: npm i install --global vsce
+    - run: npm i install --global ts-mocha    
+    - run: npm i install --global gulp
+    - run: ts-mocha ./src/test/runTest.ts
       if: runner.os == 'Linux'
     - run: npm test
       if: runner.os != 'Linux'
