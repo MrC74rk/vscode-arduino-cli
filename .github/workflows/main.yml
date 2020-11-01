@@ -20,6 +20,7 @@ jobs:
       with:
         node-version: 10.x
     - run: npm i install --global vsce
+    - run: npm i install --global mocha 
     - run: npm i install --global ts-mocha    
     - run: npm i install --global gulp
     - run: ts-mocha ./src/test/runTest.ts
