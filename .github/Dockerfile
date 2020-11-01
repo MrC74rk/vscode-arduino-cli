@@ -11,10 +11,14 @@ RUN apt-get install -y sudo
 RUN usermod -aG sudo node
 #
 #
-#
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x entrypoint.sh
 #
+COPY buildEnv.sh /buildEnv.sh
+RUN chmod +x buildEnv.sh
+#
+#
+#
 USER node
 #
-ENTRYPOINT ["sudo ./entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"] 
