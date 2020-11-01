@@ -18,7 +18,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - run: wget --no-check-certificate https://az764295.vo.msecnd.net/stable/a0479759d6e9ea56afa657e454193f72aef85bd0/code_1.48.2-1598353430_amd64.deb
-    - run: apt install ./code_1.48.2-1598353430_amd64.deb
+    - run: sudo apt install ./code_1.48.2-1598353430_amd64.deb
     - run: npm install
     - run: npm install chai mocha ts-node @types/chai @types/mocha --save-dev
     #- run: npm ci 
