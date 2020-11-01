@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest #${{ matrix.os }} To reduce test time
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -19,6 +19,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 10.x
+    - run: nmp install --global vsce    
     - run: npm install --global gulp
     - run: xvfb-run -a npm test
       if: runner.os == 'Linux'
