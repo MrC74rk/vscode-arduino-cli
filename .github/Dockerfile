@@ -9,11 +9,12 @@ FROM node:14
 RUN apt-get update
 RUN apt-get install -y sudo
 RUN usermod -aG sudo node
-USER node
 #
 #
 #
 COPY entrypoint.sh /entrypoint.sh
-RUN sudo chmod +x entrypoint.sh
+RUN chmod +x entrypoint.sh
 #
-ENTRYPOINT ["/entrypoint.sh"]
+USER node
+#
+ENTRYPOINT ["sudo ./entrypoint.sh"]
