@@ -17,7 +17,7 @@ RUN chmod +x entrypoint.sh
 COPY buildEnv.sh /buildEnv.sh
 RUN chmod +x buildEnv.sh
 #
-RUN which vscode
+RUN which code
 #
 USER node
 #
