@@ -1,14 +1,23 @@
 on:
   push:
-    #branches:
+    branches:
       #- master
 
 jobs:
-  test:
-    runs-on: ubuntu-18.04
-    name: CI/CD Automation
+  build:
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
-     - uses: actions/checkout@v2
-     - name: Create Docker
-       uses: ./.github/
-       id: 'Dockerfile'
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Install Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.x
+    - run: npm install
+    - run: xvfb-run -a npm test
+      if: runner.os == 'Linux'
+    - run: npm test
+      if: runner.os != 'Linux'
