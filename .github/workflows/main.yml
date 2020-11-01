@@ -21,5 +21,5 @@ jobs:
     - run: ls | grep package-lock
     - run: npm ci 
     #  if: runner.os == 'Linux'
-    - run: mocha
+    - run: ./node_modules/mocha/bin/_mocha
     #  if: runner.os != 'Linux'
