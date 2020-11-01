@@ -12,6 +12,6 @@ USER node
 #
 #
 COPY entrypoint.sh /entrypoint.sh
-RUN ["bin/bash" "-c" 'sudo chmod +x entrypoint.sh" 
+RUN ["bin/bash" "-c" "sudo chmod +x entrypoint.sh"]
 #
 ENTRYPOINT ["/entrypoint.sh"]
