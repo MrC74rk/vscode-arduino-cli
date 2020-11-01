@@ -20,7 +20,6 @@ jobs:
       with:
         node-version: 10.x
     - run: npm ci
-    - 
     #- run: npm i install --global vsce
     #- run: npm i install --global typescript
     #- run: npm i install --global mocha 
