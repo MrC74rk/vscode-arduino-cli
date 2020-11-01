@@ -9,5 +9,7 @@
       "inlineSourceMap": true,
       "moduleResolution": "node"
     },
-    "include": ["scripts/**/*.ts", "src/**/*.ts", "node_modules/lodash-es/**/*.js"]
+    "include": ["scripts/**/*.ts", "src/**/*.ts", "node_modules/lodash-es/**/*.js"],
+
+    "type": "module"
   }
