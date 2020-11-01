@@ -145,7 +145,7 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "test": "env TS_NODE_PROJECT=\"tsconfig.testing.json\" mocha --require ts-node/register 'src/test/**/*.ts'"
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
     
   },
   "devDependencies": {

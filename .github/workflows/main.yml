@@ -18,6 +18,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - run: npm install
+    - run: npm i @types/node -D
     - run: npm ci 
     #  if: runner.os == 'Linux'
     - run: npx mocha /home/runner/work/vscode-arduino-cli/vscode-arduino-cli/src/test/runTest.ts
