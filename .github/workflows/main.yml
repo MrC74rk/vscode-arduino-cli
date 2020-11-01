@@ -1,3 +1,5 @@
+#Several lines are commented out. This workflow will test on MACOS, Windows, and Linux
+#But while I am still figuring out actions and CD/CD I've cut some things out to save on run time
 on:
   push:
     branches:
