@@ -21,7 +21,7 @@ jobs:
         node-version: 10.x
     - run: npm install --global vsce    
     - run: npm install --global gulp
-    - run: xvfb-run -a npm test
+    - run: mocha ./src/test/runTest.ts
       if: runner.os == 'Linux'
     - run: npm test
       if: runner.os != 'Linux'
