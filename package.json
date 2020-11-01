@@ -146,7 +146,7 @@
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "testing": "npm run compile && node ./node_modules/vscode/bin/test",
-    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'src/test/*.ts'"
+    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'src/test/runTest.ts'"
     
   },
   "devDependencies": {
