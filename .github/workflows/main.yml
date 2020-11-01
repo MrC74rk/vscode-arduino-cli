@@ -20,6 +20,6 @@ jobs:
     - run: npm install
     - run: npm ci 
     #  if: runner.os == 'Linux'
-    - run: npx mocha test
+    - run: npx mocha runTest.ts
     #- run: ./node_modules/mocha/bin/_mocha
     #  if: runner.os != 'Linux'
