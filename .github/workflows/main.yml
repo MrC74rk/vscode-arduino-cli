@@ -20,6 +20,6 @@ jobs:
     - run: npm install
     - run: npm ci 
     #  if: runner.os == 'Linux'
-    - run: npx mocha runTest.ts
+    - run: npx mocha /home/runner/work/vscode-arduino-cli/vscode-arduino-cli/src/test/runTest.ts
     #- run: ./node_modules/mocha/bin/_mocha
     #  if: runner.os != 'Linux'
