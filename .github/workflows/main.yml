@@ -23,8 +23,8 @@ jobs:
     - run: npm i install --global typescript
     - run: npm i install --global mocha 
     #- run: npm i install --global ts-mocha   
-    - run: npm i install --global gulp
+    #- run: npm i install --global gulp
     #- run: ts-mocha ./src/test/runTest.ts
-      if: runner.os == 'Linux'
+    #  if: runner.os == 'Linux'
     - run: npm test
-      if: runner.os != 'Linux'
+    #  if: runner.os != 'Linux'
