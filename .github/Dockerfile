@@ -8,8 +8,7 @@
 FROM node:14
 RUN apt-get update
 RUN apt-get install -y sudo
-RUN echo "user ALL(root) NOPASSWD:ALL" > /ect/sudousers.d/user && \
-    chmod 0440 /etc/sudousers.d/user
+RUN usermod -aG sudo node
 USER node
 #
 #
